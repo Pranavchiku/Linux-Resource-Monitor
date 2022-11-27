@@ -7,6 +7,7 @@
 #include "format.h"
 #include "ncurses_display.h"
 #include "system.h"
+#include <bits/stdc++.h>
 
 using std::string;
 using std::to_string;
@@ -37,6 +38,10 @@ void NCursesDisplay::DisplaySystem(System& system, WINDOW* window) {
   mvwprintw(window, row, 10, "");
   wprintw(window, ProgressBar(system.Cpu().Utilization()).c_str());
   wattroff(window, COLOR_PAIR(1));
+  mvwprintw(window, ++row, 2,
+            ("Total Memory: " + to_string(system.TotalMemory())).c_str());
+  mvwprintw(window, ++row, 2,
+            ("Free Memory: " + to_string(system.FreeMemory())).c_str());
   mvwprintw(window, ++row, 2, "Memory: ");
   wattron(window, COLOR_PAIR(1));
   mvwprintw(window, row, 10, "");
@@ -80,7 +85,9 @@ void NCursesDisplay::DisplayProcesses(std::vector<Process> processes,
     mvwprintw(window, row, command_column,
               processes[i].Command().substr(0, window->_maxx - 46).c_str());
   }
+  
 }
+
 
 void NCursesDisplay::Display(System& system, int n) {
   initscr();      // start ncurses

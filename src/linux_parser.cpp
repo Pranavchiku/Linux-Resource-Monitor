@@ -82,6 +82,20 @@ float LinuxParser::MemoryUtilization() {
   return memory;
 }
 
+// Read total memory
+float LinuxParser::TotalMemory() {
+  float memTotal = ParserHelper::GetValueByKey<int>(
+      ParserConsts::filterMemTotalString, ParserConsts::kMeminfoFilename);
+  return memTotal;
+}
+
+// Read free memory
+float LinuxParser::FreeMemory() {
+  float memFree = ParserHelper::GetValueByKey<int>(
+      ParserConsts::filterMemFreeString, ParserConsts::kMeminfoFilename);
+  return memFree;
+}
+
 
 // Read and return the system uptime
 long LinuxParser::UpTime() {

@@ -13,6 +13,8 @@ using std::vector;
 namespace LinuxParser {
 // System
 float MemoryUtilization();
+float TotalMemory();
+float FreeMemory();
 long UpTime();
 vector<int> Pids();
 int TotalProcesses();

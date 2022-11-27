@@ -23,6 +23,12 @@ string System::Kernel() { return string(LinuxParser::Kernel()); }
 // Return the system's memory utilization
 float System::MemoryUtilization() { return LinuxParser::MemoryUtilization(); }
 
+// Return total memory 
+float System::TotalMemory() { return LinuxParser::TotalMemory(); }
+
+// Return free memory
+float System::FreeMemory() { return LinuxParser::FreeMemory(); }
+
 // Return the operating system name
 string System::OperatingSystem() { return LinuxParser::OperatingSystem(); }
 

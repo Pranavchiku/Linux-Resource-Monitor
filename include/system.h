@@ -12,7 +12,9 @@ class System {
  public:
   Processor& Cpu();                  
   All_Processes& Processes(); 
-  float MemoryUtilization();         
+  float MemoryUtilization();   
+  float TotalMemory();
+  float FreeMemory();      
   long UpTime();                     
   int TotalProcesses();              
   int RunningProcesses();            

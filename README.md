@@ -1,7 +1,7 @@
 #  Linux-Resource-Monitor
 
 ## About
-Content here
+Through this project we plan to implement an efficient real time resource monitor which will give the performance metrics for the data as it traverses different processes.
 
 ## How to Use:
 Install ncurses within your own Linux environment to run this project:
